@@ -16,6 +16,28 @@ Step 4: Now upload arduinoConnection.ino to the first arduino device and seconar
 Here you can see the Topic name on which each arduino will publish the sensor data 
 
 
+Step 5: open a terminal and run command : **roscore** , let it run on this terminal and open new terminal and source the workspace on this terminal using the command : **source ros_arduino_ws/devel/setup.bash** and then launch the launch file using the command : **roslaunch arduino_test_comm arduino.launch**
+
+Step 6: 
+
+![image](https://github.com/geekyharsh01/Final_DC_Project/assets/95271790/9934305b-48b0-4071-a880-67b95e413e6a)
+
+in this path/ folder you can see 4 python files :
+1. firstArduino.py - this file contains subscriber code , this subscribes first arduino on the topic info_back_from_first and then prints signal value on terminal
+2. seconArduino.py - this file contains subscriber code , this subscribes second arduino on the topic info_back_from_second and then prints signal value on terminal
+3. subscribeAddPublish.py - this file subscribes to both the topics on which 2 ardunis are publising the data and then it adds the signal values from both arduino and prints the result on terminal and publish this sum on the topic AddedSignal so that other nodes can subscribe on this topic and can access the value
+4. subscribeAddedSignal.py - this file subcribes on the topic addedSignal to which this subscribeAddPublish files publish the sum and then print
+
+
+Step 7: Open new terminal type **rostopic list** to see the list of all the topics 
+
+Step 8: To run the above 4 files there is simple command : 
+  **source ros_arduino_ws/devel/setup.bash**
+  **rosrun arduino_test_comm firstArduino.py**
+  to run other files open new terminal then source it and then **rosrun arduino_test_comm subscribeAddPublish.py**
+
+
+
 
 
 
