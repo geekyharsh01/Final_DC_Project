@@ -1,0 +1,37 @@
+To run single arduino:
+rosrun rosserial_arduino serial_node.py /dev/ttyACM0 
+
+
+To solve library related issues 
+rm -rf ros_lib
+rosrun rosserial_arduino make_libraries.py .
+
+
+
+If you are using arduino micro and getting : Unable to sync with device; possible link problem or link software version mismatch such as hydro rosserial_python with groovy Arduino
+add the following line to the begining of your ino file
+#define USE_USBCON
+
+ 
+
+To print rosenv like rosip 
+printenv | grep ROS
+
+
+
+if roscore doesn't work or establish connection to some other ip address where we are not able to ping
+nano ~/.bashrc
+
+ROS_IP=localhost
+ROS_MASTER_URI=http://localhost:11311
+and then save the file 
+Save the file and then reload your .bashrc file to apply the changes:
+
+
+
+
+for cstring.h error-  remove std infront of memcpy
+also remove cstring.h to string.h
+in the library - rosserial arduino library ->src->ros->msg.h 
+
+
