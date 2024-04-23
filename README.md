@@ -37,6 +37,9 @@ Step 8: To run the above 4 files there is simple command :
   to run other files open new terminal then source it and then **rosrun arduino_test_comm subscribeAddPublish.py**
 
 
+To see the procedure and results refer to the demo video given in this repo.
+
+
 
 
 
